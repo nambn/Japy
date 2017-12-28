@@ -20,7 +20,7 @@ class AllMigrationHere < ActiveRecord::Migration[5.1]
 			t.index [:user_id, :book_id]
 		end
 
-		create_join_table :users, :vocabs, table_name: :learned_items do |t|
+		create_join_table :users, :vocabs, table_name: :learned_vocabs do |t|
 			t.index [:user_id, :vocab_id]
 		end
 	end

@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 20171227175900) do
     t.text "body", null: false
   end
 
-  create_table "learned_items", id: false, force: :cascade do |t|
+  create_table "learned_vocabs", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "vocab_id", null: false
-    t.index ["user_id", "vocab_id"], name: "index_learned_items_on_user_id_and_vocab_id"
+    t.index ["user_id", "vocab_id"], name: "index_learned_vocabs_on_user_id_and_vocab_id"
   end
 
   create_table "owned_books", id: false, force: :cascade do |t|
