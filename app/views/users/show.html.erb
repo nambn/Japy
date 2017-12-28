@@ -1,0 +1,19 @@
+<% provide(:title, @user.name) %>
+<% if(@user == current_user) %>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<% end %>
+<%= link_to 'All users', users_path %> |
+<%= link_to 'Log out', logout_path, method: :delete %>
+<br><br>
+<table>
+	<% for k in @user.attributes.keys %>
+	<tr>
+		<td><%= k %></td>
+		<td><%= @user.attributes[k].to_s %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<td>Test taken: </td>
+		<td><%= link_to pluralize(@user.scores.count, 'test'), user_scores_path(@user)%></td>
+	</tr>
+</table>

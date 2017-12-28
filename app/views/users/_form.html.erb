@@ -1,0 +1,28 @@
+<%= form_for(@user, url: yield(:action_url)) do |f| %>
+<% if @user.errors.any? %>
+<div>
+	The form contains <%= pluralize(@user.errors.count, "error") %>.
+
+	<ul>
+		<% @user.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+
+<% end %>
+
+<%= f.label :name %>
+<%= f.text_field :name%>
+
+<%= f.label :email %>
+<%= f.email_field :email%>
+
+<%= f.label :password %>
+<%= f.password_field :password%>
+
+<%= f.label :password_confirmation, "Confirmation" %>
+<%= f.password_field :password_confirmation%>
+<br><br>
+<%= f.submit yield(:button_text)%>
+<% end %>

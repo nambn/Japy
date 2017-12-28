@@ -1,0 +1,9 @@
+<% provide(:title, 'Sign up') %>
+<% provide(:button_text, 'Create my account') %>
+<% provide(:action_url, signup_path) %>
+
+<h1>Sign up</h1>
+<%= link_to 'Back', users_path %>
+<br><br>
+
+<%= render 'form' %>

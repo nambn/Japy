@@ -1,0 +1,35 @@
+<% provide(:title, 'All users') %>
+
+<h1>Users</h1>
+<%= link_to 'Sign Up', signup_path %> |
+<%= link_to 'Log In', login_path %>
+<br><br>
+
+<table>
+  <thead align=left>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Test taken</th>
+      <th>Books owned</th>
+      <th>Nums of learned item</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%=user.id%></td>
+      <td><%=user.name%></td>
+      <td><%=user.email%></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= link_to 'show', user %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= will_paginate %>

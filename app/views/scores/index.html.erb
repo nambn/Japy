@@ -1,0 +1,22 @@
+<% provide(:title, 'Scores') %>
+
+<h1>Score</h1>
+<% link_to 'Profile', @user %>
+<br>
+User name: <%= @user.name %>
+<table>
+	<thead>
+		<tr>
+			<th>Time stamp</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @user.scores.each do |s|%>
+		<tr>
+			<td><%= s.created_at %></td>
+			<td><%= s.value %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
