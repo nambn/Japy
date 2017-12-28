@@ -1,0 +1,2 @@
+class JapyController < ApplicationController
+end
