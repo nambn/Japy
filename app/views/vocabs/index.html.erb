@@ -1,0 +1,31 @@
+<% provide :title, 'Vocabulary' %>
+
+<h1>Vocabularies list</h1>
+<br>
+<% book = Book.find(params[:book_id]) %>
+Book: <%= link_to book.title, book_path(book) %>
+<br>
+Unit: <%= (unit = params[:unit])? unit : 'All' %>
+<br>
+<br>
+<table>
+	<tr>
+		<th>No</th>
+		<th>Japanese</th>
+		<th>Kanji</th>
+		<th>Vietnamese</th>
+		<th>Example</th>
+	</tr>
+	<% i = (params[:page].to_i-1)*10 %>
+	<% @vocabs.each do |vocab| %>
+	<tr>
+		<td><%= i = i+1 %></td>
+		<td><%= vocab.japanese %></td>
+		<td><%= vocab.kanji %></td>
+		<td><%= vocab.vietnamese %></td>
+		<td><%= vocab.example %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= will_paginate @vocabs %>

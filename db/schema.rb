@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20171227175900) do
 
   create_table "books", primary_key: "book_id", force: :cascade do |t|
-    t.integer "title", null: false
+    t.text "title", null: false
     t.text "level", null: false
     t.integer "price", null: false
     t.text "cover_image", null: false

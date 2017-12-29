@@ -34,10 +34,14 @@ a {
 
 th {
   padding-bottom: 5px;
+  text-align: left;
 }
 
 td {
   padding: 0 5px 7px;
+  max-width: 500px;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 div {

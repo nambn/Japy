@@ -1,9 +1,35 @@
 <% provide(:title, 'Edit') %>
-<% provide(:button_text, 'Save changes') %>
-<% provide(:action_url, user_path(@user)) %>
 
 <h1>Editing User</h1>
 <%= link_to 'Back', @user %> |
 <%= link_to 'All User', users_path %>
-<br>
-<%= render 'form' %>
+<br><br>
+
+<%= form_for(@user, url: user_path(@user)) do |f| %>
+<% if @user.errors.any? %>
+<div>
+	The form contains <%= pluralize(@user.errors.count, "error") %>.
+
+	<ul>
+		<% @user.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+
+<% end %>
+
+<%= f.label :name %>
+<%= f.text_field :name%>
+
+<%= f.label :email %>
+<%= f.email_field :email%>
+
+<%= f.label :password %>
+<%= f.password_field :password%>
+
+<%= f.label :password_confirmation, "Confirmation" %>
+<%= f.password_field :password_confirmation%>
+<br><br>
+<%= f.submit 'Save changes'%>
+<% end %>
