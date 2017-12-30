@@ -1,6 +1,6 @@
 <% provide(:title, 'Scores') %>
 
-<h1>Score</h1>
+<h1>Test history</h1>
 <%= link_to 'Profile', current_user %>
 <br><br>
 User name: <%= current_user.name %>
@@ -9,7 +9,7 @@ User name: <%= current_user.name %>
 		<tr>
 			<th>Time stamp</th>
 			<th>Score</th>
-		</tr>
+		</tr>ory
 		<% @scores.each do |s|%>
 		<tr>
 			<td><%= s.created_at %></td>

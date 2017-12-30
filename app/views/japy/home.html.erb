@@ -1,51 +1,56 @@
 <% provide(:title, 'Home') %>
 
-<pre>  
-           Prefix Verb   URI Pattern                                          Controller#Action
-             root GET    /JPweb-be(.:format)                                  japy#home
-      book_vocabs GET    /JPweb-be/books/:book_id/vocabs(.:format)            vocabs#index
-                  POST   /JPweb-be/books/:book_id/vocabs(.:format)            vocabs#create
-   new_book_vocab GET    /JPweb-be/books/:book_id/vocabs/new(.:format)        vocabs#new
-  edit_book_vocab GET    /JPweb-be/books/:book_id/vocabs/:id/edit(.:format)   vocabs#edit
-       book_vocab GET    /JPweb-be/books/:book_id/vocabs/:id(.:format)        vocabs#show
-                  PATCH  /JPweb-be/books/:book_id/vocabs/:id(.:format)        vocabs#update
-                  PUT    /JPweb-be/books/:book_id/vocabs/:id(.:format)        vocabs#update
-                  DELETE /JPweb-be/books/:book_id/vocabs/:id(.:format)        vocabs#destroy
-    book_grammars GET    /JPweb-be/books/:book_id/grammars(.:format)          grammars#index
-                  POST   /JPweb-be/books/:book_id/grammars(.:format)          grammars#create
- new_book_grammar GET    /JPweb-be/books/:book_id/grammars/new(.:format)      grammars#new
-edit_book_grammar GET    /JPweb-be/books/:book_id/grammars/:id/edit(.:format) grammars#edit
-     book_grammar GET    /JPweb-be/books/:book_id/grammars/:id(.:format)      grammars#show
-                  PATCH  /JPweb-be/books/:book_id/grammars/:id(.:format)      grammars#update
-                  PUT    /JPweb-be/books/:book_id/grammars/:id(.:format)      grammars#update
-                  DELETE /JPweb-be/books/:book_id/grammars/:id(.:format)      grammars#destroy
-            books GET    /JPweb-be/books(.:format)                            books#index
-                  POST   /JPweb-be/books(.:format)                            books#create
-         new_book GET    /JPweb-be/books/new(.:format)                        books#new
-        edit_book GET    /JPweb-be/books/:id/edit(.:format)                   books#edit
-             book GET    /JPweb-be/books/:id(.:format)                        books#show
-                  PATCH  /JPweb-be/books/:id(.:format)                        books#update
-                  PUT    /JPweb-be/books/:id(.:format)                        books#update
-                  DELETE /JPweb-be/books/:id(.:format)                        books#destroy
-           signup GET    /JPweb-be/signup(.:format)                           users#new
-                  POST   /JPweb-be/signup(.:format)                           users#create
-      user_scores GET    /JPweb-be/users/:user_id/scores(.:format)            scores#index
-                  POST   /JPweb-be/users/:user_id/scores(.:format)            scores#create
-   new_user_score GET    /JPweb-be/users/:user_id/scores/new(.:format)        scores#new
-  edit_user_score GET    /JPweb-be/users/:user_id/scores/:id/edit(.:format)   scores#edit
-       user_score GET    /JPweb-be/users/:user_id/scores/:id(.:format)        scores#show
-                  PATCH  /JPweb-be/users/:user_id/scores/:id(.:format)        scores#update
-                  PUT    /JPweb-be/users/:user_id/scores/:id(.:format)        scores#update
-                  DELETE /JPweb-be/users/:user_id/scores/:id(.:format)        scores#destroy
-            users GET    /JPweb-be/users(.:format)                            users#index
-                  POST   /JPweb-be/users(.:format)                            users#create
-         new_user GET    /JPweb-be/users/new(.:format)                        users#new
-        edit_user GET    /JPweb-be/users/:id/edit(.:format)                   users#edit
-             user GET    /JPweb-be/users/:id(.:format)                        users#show
-                  PATCH  /JPweb-be/users/:id(.:format)                        users#update
-                  PUT    /JPweb-be/users/:id(.:format)                        users#update
-                  DELETE /JPweb-be/users/:id(.:format)                        users#destroy
-            login GET    /JPweb-be/login(.:format)                            sessions#new
-                  POST   /JPweb-be/login(.:format)                            sessions#create
-           logout DELETE /JPweb-be/logout(.:format)                           sessions#destroy
+<pre>
+            Prefix Verb   URI Pattern                                                         Controller#Action
+            root GET    /JPweb-be(.:format)                                                 japy#home
+      book_units GET    /JPweb-be/books/:book_id/units(.:format)                            books#units
+                 GET    /JPweb-be/books/:book_id(/:unit)/vocabs(.:format)                   vocabs#index
+                 GET    /JPweb-be/books/:book_id(/:unit)/grammars(.:format)                 grammars#index
+     book_vocabs GET    /JPweb-be/books/:book_id/vocabs(.:format)                           vocabs#index
+                 POST   /JPweb-be/books/:book_id/vocabs(.:format)                           vocabs#create
+  new_book_vocab GET    /JPweb-be/books/:book_id/vocabs/new(.:format)                       vocabs#new
+      edit_vocab GET    /JPweb-be/vocabs/:id/edit(.:format)                                 vocabs#edit
+           vocab GET    /JPweb-be/vocabs/:id(.:format)                                      vocabs#show
+                 PATCH  /JPweb-be/vocabs/:id(.:format)                                      vocabs#update
+                 PUT    /JPweb-be/vocabs/:id(.:format)                                      vocabs#update
+                 DELETE /JPweb-be/vocabs/:id(.:format)                                      vocabs#destroy
+   book_grammars GET    /JPweb-be/books/:book_id/grammars(.:format)                         grammars#index
+                 POST   /JPweb-be/books/:book_id/grammars(.:format)                         grammars#create
+new_book_grammar GET    /JPweb-be/books/:book_id/grammars/new(.:format)                     grammars#new
+    edit_grammar GET    /JPweb-be/grammars/:id/edit(.:format)                               grammars#edit
+         grammar GET    /JPweb-be/grammars/:id(.:format)                                    grammars#show
+                 PATCH  /JPweb-be/grammars/:id(.:format)                                    grammars#update
+                 PUT    /JPweb-be/grammars/:id(.:format)                                    grammars#update
+                 DELETE /JPweb-be/grammars/:id(.:format)                                    grammars#destroy
+                 GET    /JPweb-be/books/:book_id/minitest(/:size)(/:type)(/:time)(.:format) books#minitest
+           books GET    /JPweb-be/books(.:format)                                           books#index
+                 POST   /JPweb-be/books(.:format)                                           books#create
+        new_book GET    /JPweb-be/books/new(.:format)                                       books#new
+       edit_book GET    /JPweb-be/books/:id/edit(.:format)                                  books#edit
+            book GET    /JPweb-be/books/:id(.:format)                                       books#show
+                 PATCH  /JPweb-be/books/:id(.:format)                                       books#update
+                 PUT    /JPweb-be/books/:id(.:format)                                       books#update
+                 DELETE /JPweb-be/books/:id(.:format)                                       books#destroy
+          signup GET    /JPweb-be/signup(.:format)                                          users#new
+                 POST   /JPweb-be/signup(.:format)                                          users#create
+     user_scores GET    /JPweb-be/users/:user_id/scores(.:format)                           scores#index
+                 POST   /JPweb-be/users/:user_id/scores(.:format)                           scores#create
+  new_user_score GET    /JPweb-be/users/:user_id/scores/new(.:format)                       scores#new
+ edit_user_score GET    /JPweb-be/users/:user_id/scores/:id/edit(.:format)                  scores#edit
+      user_score GET    /JPweb-be/users/:user_id/scores/:id(.:format)                       scores#show
+                 PATCH  /JPweb-be/users/:user_id/scores/:id(.:format)                       scores#update
+                 PUT    /JPweb-be/users/:user_id/scores/:id(.:format)                       scores#update
+                 DELETE /JPweb-be/users/:user_id/scores/:id(.:format)                       scores#destroy
+           users GET    /JPweb-be/users(.:format)                                           users#index
+                 POST   /JPweb-be/users(.:format)                                           users#create
+        new_user GET    /JPweb-be/users/new(.:format)                                       users#new
+       edit_user GET    /JPweb-be/users/:id/edit(.:format)                                  users#edit
+            user GET    /JPweb-be/users/:id(.:format)                                       users#show
+                 PATCH  /JPweb-be/users/:id(.:format)                                       users#update
+                 PUT    /JPweb-be/users/:id(.:format)                                       users#update
+                 DELETE /JPweb-be/users/:id(.:format)                                       users#destroy
+           login GET    /JPweb-be/login(.:format)                                           sessions#new
+                 POST   /JPweb-be/login(.:format)                                           sessions#create
+          logout DELETE /JPweb-be/logout(.:format)                                          sessions#destroy
+
 </pre>

@@ -18,7 +18,7 @@ class AllMigrationHere < ActiveRecord::Migration[5.1]
 
 		create_join_table :users, :books, table_name: :owned_books do |t|
 			t.references :user, foreign_key: {on_delete: :cascade}, null: false
-			t.datetime :buyed_time
+			t.datetime :buy_time
 			t.index [:user_id, :book_id], unique: true
 		end
 
@@ -26,7 +26,7 @@ class AllMigrationHere < ActiveRecord::Migration[5.1]
 
 		create_join_table :users, :vocabs, table_name: :learned_vocabs do |t|
 			t.references :user, foreign_key: {on_delete: :cascade}, null: false
-			t.datetime :learned_time
+			t.datetime :learn_time
 			t.index [:user_id, :vocab_id], unique: true
 		end
 

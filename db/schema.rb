@@ -30,16 +30,15 @@ ActiveRecord::Schema.define(version: 20171227175900) do
   create_table "learned_vocabs", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "vocab_id", null: false
-    t.datetime "learned_time"
+    t.datetime "learn_time"
     t.index ["user_id", "vocab_id"], name: "index_learned_vocabs_on_user_id_and_vocab_id", unique: true
     t.index ["user_id"], name: "index_learned_vocabs_on_user_id"
-    t.index ["vocab_id"], name: "index_learned_vocabs_on_vocab_id"
   end
 
   create_table "owned_books", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "book_id", null: false
-    t.datetime "buyed_time"
+    t.datetime "buy_time"
     t.index ["user_id", "book_id"], name: "index_owned_books_on_user_id_and_book_id", unique: true
     t.index ["user_id"], name: "index_owned_books_on_user_id"
   end

@@ -1,8 +1,9 @@
 class BooksController < ApplicationController
 
-	# GET /books.json
+	# GET /books
+	# GET /users/:user_id/books
 	def index
-		@books = Book.all
+		@books = params[:user_id].present? ? (User.find(params[:user_id]).books) : Book.all
 	end
 
 	# GET /books/:book_id/units.json

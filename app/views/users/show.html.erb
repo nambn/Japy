@@ -12,8 +12,14 @@
 		<td><%= @user.attributes[k].to_s %></td>
 	</tr>
 	<% end %>
+
 	<tr>
 		<td>Test taken: </td>
 		<td><%= link_to pluralize(@user.scores.count, 'test'), user_scores_path(@user)%></td>
+	</tr>
+
+	<tr>
+		<td>Books owned: </td>
+		<td><%= link_to pluralize(@user.books.size, 'book'), '/JPweb-be' %></td>
 	</tr>
 </table>

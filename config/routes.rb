@@ -11,15 +11,15 @@ Rails.application.routes.draw do
 			get '/minitest(/:size)(/:type)(/:time)', to: 'books#minitest'
 		end
 
-		get    '/signup'    ,to: 'users#new'
-		post   '/signup'    ,to: 'users#create'
+		get '/signup', to: 'users#new'
 		resources :users do
 			resources :scores
+			resources :books, only: :index
 		end
 
-		get    '/login'     ,to: 'sessions#new'
-		post   '/login'     ,to: 'sessions#create'
-		delete '/logout'    ,to: 'sessions#destroy'
+		get '/login', to: 'sessions#new'
+		post '/login', to: 'sessions#create'
+		delete '/logout', to: 'sessions#destroy'
 
 		# namespace :admin do
 		# 	resources :users
