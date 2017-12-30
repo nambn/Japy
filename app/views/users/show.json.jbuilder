@@ -1,1 +1,2 @@
-json.partial! "users/user", user: @user
+json.result true
+json.data @user

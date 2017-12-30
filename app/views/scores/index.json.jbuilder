@@ -1,2 +1,2 @@
 json.result true
-json.data @books
+json.data @scores

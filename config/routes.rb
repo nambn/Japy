@@ -2,14 +2,13 @@ Rails.application.routes.draw do
 	scope '/JPweb-be' do
 		root 'japy#home'
 
-		resources :vocabs
-
 		resources :books, shallow: true do
-			get  '/units'     ,to: 'books#units'
-			get  '(/:unit)/vocabs', to: 'vocabs#index'
-			get  '(/:unit)/grammars', to: 'grammars#index'
+			get '/units', to:'books#units'
+			get '(/:unit)/vocabs', to:'vocabs#index'
+			get '(/:unit)/grammars', to:'grammars#index'
 			resources :vocabs
 			resources :grammars
+			get '/minitest(/:size)(/:type)(/:time)', to: 'books#minitest'
 		end
 
 		get    '/signup'    ,to: 'users#new'

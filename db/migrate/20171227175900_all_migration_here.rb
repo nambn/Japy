@@ -11,17 +11,25 @@ class AllMigrationHere < ActiveRecord::Migration[5.1]
 		end
 
 		create_table :scores do |t|
-			t.belongs_to :user, foreign_key: true, null: false
-			t.integer    :value, null: false
+			t.references :user, foreign_key: {on_delete: :cascade}, null: false
+			t.integer :value, null: false
 			t.timestamps
 		end
 
 		create_join_table :users, :books, table_name: :owned_books do |t|
-			t.index [:user_id, :book_id]
+			t.references :user, foreign_key: {on_delete: :cascade}, null: false
+			t.datetime :buyed_time
+			t.index [:user_id, :book_id], unique: true
 		end
 
+		add_foreign_key :owned_books, :books, column: :book_id, on_delete: :cascade
+
 		create_join_table :users, :vocabs, table_name: :learned_vocabs do |t|
-			t.index [:user_id, :vocab_id]
+			t.references :user, foreign_key: {on_delete: :cascade}, null: false
+			t.datetime :learned_time
+			t.index [:user_id, :vocab_id], unique: true
 		end
+
+		add_foreign_key :learned_vocabs, :vocabs, column: :vocab_id, on_delete: :cascade
 	end
 end
