@@ -31,5 +31,13 @@ class AllMigrationHere < ActiveRecord::Migration[5.1]
 		end
 
 		add_foreign_key :learned_vocabs, :vocabs, column: :vocab_id, on_delete: :cascade
+
+		create_join_table :users, :grammars, table_name: :learned_grammars do |t|
+			t.references :user, foreign_key: {on_delete: :cascade}, null: false
+			t.datetime :learn_time
+			t.index [:user_id, :grammar_id], unique: true
+		end
+
+		add_foreign_key :learned_grammars, :grammars, column: :grammar_id, on_delete: :cascade
 	end
 end

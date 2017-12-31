@@ -1,86 +1,48 @@
 class UsersController < ApplicationController
-	before_action :logged_in_user, only: [:index, :show, :edit, :update]
-	before_action :correct_user, only: [:edit, :update]
-	before_action :admin_user, only: :destroy
+	# before_action :logged_in_user, only: [:index, :show, :edit, :update]
+	# before_action :correct_user, only: [:edit, :update]
+	# before_action :admin_user, only: :destroy
 
 	# GET /users
-	# GET /users.json
 	def index
-		respond_to do |format|
-			format.html {
-				@users = User.paginate(page: params[:page], per_page: 10)
-			}
-			format.json {
-				@users = User.all
-			}
-		end
+		@users = User.all
 	end
 
-	# GET /users/1
-	# GET /users/1.json
+	# GET /users/:id
 	def show
 		@user = User.find(params[:id])
 	end
 
-	# GET /users/new
-	def new
-		if logged_in?
-			flash[:msg] = '*** Already logged in ***'
-			redirect_to current_user
-		end
-		@user = User.new
-	end
-
 	# POST /users
-	# POST /users.json
 	def create
 		@user = User.new(user_params)
 		respond_to do |format|
 			if @user.save
 				log_in @user
-				format.html { 
-					flash[:msg] = '*** User was successfully created. ***'
-					redirect_back_or @user
-				}
-				format.json { render :show, status: :created, location: @user }
+				format.json { render json: {"result" => "true","data" => @user.to_json}}
 			else
-				format.html { render 'new' }
-				format.json { render json: @user.errors, status: :unprocessable_entity }
+				format.json { render json: {"result" => "false", "data" => @user.errors}}
 			end
 		end
 	end
 
-	# GET /users/1/edit
-	def edit
-		@user = User.find(params[:id])
-	end
-
-	# PATCH/PUT /users/1
-	# PATCH/PUT /users/1.json
+	# PATCH/PUT /users/:id
 	def update
 		@user = User.find(params[:id])
 		respond_to do |format|
 			if @user.update_attributes(user_params)
-				format.html { 
-					flash[:msg] = '*** User was successfully updated. ***'
-					redirect_to @user
-				}
-				format.json { render :show, status: :ok, location: @user }
+				format.json { render json: {"result" => "true","data" => @user.to_json}}
 			else
-				format.html { render 'edit' }
-				format.json { render json: @user.errors, status: :unprocessable_entity }
+				format.json { render json: {"result" => "false", "data" => @user.errors}}
 			end
 		end
 	end
 
+	# DELETE /users/:id
 	def destroy
 		User.find(params[:id]).destroy
 		respond_to do |format|
-			format.html {
-				flash[:msg] = "*** User deleted ***"
-				redirect_to users_url
-			}
-			format.json { }
+			format.json { render json: {"result" => "true"}
 		end
 	end
 

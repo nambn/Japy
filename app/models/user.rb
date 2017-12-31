@@ -4,6 +4,8 @@ class User < ApplicationRecord
 	has_many :scores
 	has_many :learned_vocabs
 	has_many :vocabs, through: :learned_vocabs
+	has_many :learned_grammars
+	has_many :grammars, through: :learned_grammars
 
 	attr_accessor :remember_token
 

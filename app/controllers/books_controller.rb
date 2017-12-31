@@ -6,12 +6,15 @@ class BooksController < ApplicationController
 		@books = params[:user_id].present? ? (User.find(params[:user_id]).books) : Book.all
 	end
 
-	# GET /books/:book_id/units.json
+	# GET /books/:book_id/units
 	def units
 		@units = Vocab.where(book_id: params[:book_id]).distinct.pluck(:unit)
 	end
 
-	def minitest(size = 10, type = 1, time = false)
+	def minitest
+		size = params[:size] || 10
+		type = params[:type] || 1
+		time = params[:time] || false
 		@total = []
 		@rd = []
 		for i in 0..size

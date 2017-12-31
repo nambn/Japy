@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-	scope '/JPweb-be' do
-		root 'japy#home'
-
+	scope '/JPweb-be', defaults: {format: :json} do
 		resources :books, shallow: true do
 			get '/units', to:'books#units'
 			get '(/:unit)/vocabs', to:'vocabs#index'
@@ -20,12 +18,5 @@ Rails.application.routes.draw do
 		get '/login', to: 'sessions#new'
 		post '/login', to: 'sessions#create'
 		delete '/logout', to: 'sessions#destroy'
-
-		# namespace :admin do
-		# 	resources :users
-		# 	resources :vocabs
-		# 	resources :grammars
-		# 	resources :books
-		# end
 	end
 end

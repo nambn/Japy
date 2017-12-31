@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20171227175900) do
     t.text "body", null: false
   end
 
+  create_table "learned_grammars", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "grammar_id", null: false
+    t.datetime "learn_time"
+    t.index ["user_id", "grammar_id"], name: "index_learned_grammars_on_user_id_and_grammar_id", unique: true
+    t.index ["user_id"], name: "index_learned_grammars_on_user_id"
+  end
+
   create_table "learned_vocabs", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "vocab_id", null: false

@@ -18,7 +18,6 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'activerecord-reset-pk-sequence'
-gem 'will_paginate'
 # gem 'bootstrap-will_paginate'
 # gem 'therubyracer', platforms: :ruby
 # gem 'capistrano-rails', group: :development
