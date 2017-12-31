@@ -1,0 +1,27 @@
+{
+   "result" : true,
+   "data" : {
+      "created_at" : "2017-12-31T07:20:40.997Z",
+      "email" : "emily@japy.com",
+      "name" : "emily",
+      "password_digest" : "$2a$10$a7X5lOOi0hnauVYgEQUuHOCdHdg7JtsoA93iEWbWd8ltNUnzc1dzm",
+      "onwed_book" : [
+         {
+            "buy_time" : "2017-12-21T07:21:16.727Z",
+            "book_id" : 4
+         },
+         {
+            "buy_time" : "2017-12-01T07:21:16.727Z",
+            "book_id" : 9
+         },
+         {
+            "buy_time" : "2017-12-11T07:21:16.727Z",
+            "book_id" : 10
+         }
+      ],
+      "remember_digest" : null,
+      "admin" : false,
+      "id" : 2,
+      "updated_at" : "2017-12-31T07:20:40.997Z"
+   }
+}

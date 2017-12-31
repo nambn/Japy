@@ -42,7 +42,7 @@ class UsersController < ApplicationController
 	def destroy
 		User.find(params[:id]).destroy
 		respond_to do |format|
-			format.json { render json: {"result" => "true"}
+			format.json { render json: {"result" => "true"}}
 		end
 	end
 
