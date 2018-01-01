@@ -1,0 +1,4 @@
+{
+  "result": true,
+  "data": "{\"id\":45,\"name\":\"bluesnail\",\"email\":\"bluey@snailey.com\",\"password_digest\":\"$2a$10$nfSiSUmAZuOZn5dQU.Jvi.8Bs3013oxymGpQX1YaHzygcU3UipBFS\",\"remember_digest\":null,\"admin\":false,\"created_at\":\"2018-01-01T09:42:12.943Z\",\"updated_at\":\"2018-01-01T09:42:12.943Z\"}"
+}

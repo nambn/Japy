@@ -1,0 +1,85 @@
+{
+  "result": true,
+  "data": [
+    {
+      "book_id": 1,
+      "title": "Tanki Master tập 1",
+      "level": "N5",
+      "price": 60000,
+      "cover_image": "https://hoctiengnhatkhongkho.files.wordpress.com/2014/05/10325394_679185755482001_803854626362990304_n.jpg",
+      "description": "Mẫu đề thi Tanki Master (kèm CD)"
+    },
+    {
+      "book_id": 2,
+      "title": "Tanki Master tập 2",
+      "level": "N4",
+      "price": 60000,
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/51HeSxcjeHL._SY344_BO1,204,203,200_.jpg",
+      "description": "Mẫu đề thi N4 Tanki Master (kèm CD)"
+    },
+    {
+      "book_id": 3,
+      "title": "Tanki Master tập 3",
+      "level": "N3",
+      "price": 60000,
+      "cover_image": "https://images-na.ssl-images-amazon.com/images/I/51SJa9za1sL._SY344_BO1,204,203,200_.jpg",
+      "description": "Mẫu đề thi N3 Tanki Master ( kèm CD)"
+    },
+    {
+      "book_id": 4,
+      "title": "Tanki Master tập 4",
+      "level": "N2",
+      "price": 60000,
+      "cover_image": "https://i.pinimg.com/originals/ea/b1/fa/eab1fa08717cbfd8190127c322fde752.jpg",
+      "description": "Mẫu đề thi N2 Tanki Master ( kèm CD)"
+    },
+    {
+      "book_id": 5,
+      "title": "Tanki Master tập 5",
+      "level": "N1",
+      "price": 60000,
+      "cover_image": "https://s-media-cache-ak0.pinimg.com/736x/36/37/67/3637672aa40326efb335e5fe038e222d--drills-books.jpg",
+      "description": "Mẫu đề thi N1 Tanki Master ( kèm CD)"
+    },
+    {
+      "book_id": 6,
+      "title": "Soumatome N5",
+      "level": "N5",
+      "price": 74000,
+      "cover_image": "http://giaotrinhtiengnhat.com/wp-content/uploads/2017/09/sach-luyen-thi-n5-soumatome-tong-hop-ban-nhat-viet.jpg",
+      "description": "Sách luyện thi N5 Soumatome có những nét nổi bật sau:\r\n\r\n– Có thể học các điểm thường được đưa ra trong kỳ thi năng lực Nhật ngữ cấp độ N5 trong 6 tuần một cách hiệu quả.\r\n\r\n– Có thể học cá mẫu câu, đoạn văn, nghe hiểu căn bản có ích trong sinh hoạt thường ngày chứ không chỉ là đối sách dự thi N5.\r\n\r\n– Có thể tự học một mình vì có phần dịch tiếng Anh và tiếng Việt"
+    },
+    {
+      "book_id": 7,
+      "title": "Kanji look and learn N3, N2 – Bản Nhật Việt",
+      "level": "N2 N3",
+      "price": 85000,
+      "cover_image": "http://giaotrinhtiengnhat.com/wp-content/uploads/2017/08/kanji-look-and-learn-n3-n2.jpg",
+      "description": "Kanji look and learn N3, N2 hay ở điểm:\r\nKanji look and learn N3, N2 được biên soạn bắt nguồn từ quyển sách Kanji Pixtographic – là cuốn sách dạy Kanji ở trình độ trung cấp N3 và N2 bằng hình ảnh cực hay. Tuy nhiên điểm hạn chế của nó là trình bày không được khoa học như cuốn Kanji look and learn và hoàn toàn bằng tiếng Anh. Vậy nên, tác giả đã ghép lại các hình ảnh từ cuốn sách này và phối hợp ghép các hình ảnh có sẵn của quyển Kanji look and learn để tạo nên một quyển sách mới, hoàn toàn tiếng Việt với cách trình bày khoa học và vô cùng dễ học với cái tên là Kanji look and learn N23 phiên bản tiếng Việt"
+    },
+    {
+      "book_id": 8,
+      "title": "Soumatome N3",
+      "level": "N3",
+      "price": 257000,
+      "cover_image": "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj0vbSr14LYAhXFkJQKHWcSDg8QjRwIBw&url=https%3A%2F%2Fjapaneselibrary.wordpress.com%2Fportfolio%2Fgiai-thich-ngu-phap-n3-soumatome-bang-tieng-viet-gold%2F&psig=AOvVaw",
+      "description": "Soumatome N3 Tiếng Việt bao gồm:\r\n– 日本語総まとめ N3 読解 – nihongo soummatome N3 Đọc hiểu Choukai \r\n– 日本語総まとめ N3 文法 – nihongo soumatome N3 Ngữ pháp Bunpou– 日本語総まとめ N3 語彙 – nihongo soumatome N3 Từ vựng Goi– 日本語総まとめ N3 聴解 – nihongo soumatome N3 Nghe hiểu Choukai (Kèm CD)– 日本語総まとめ N3 漢字 – nihongo soumatome N3 Hán tự Kanji"
+    },
+    {
+      "book_id": 9,
+      "title": "Minna no nihongo I",
+      "level": "N5 N4",
+      "price": 50000,
+      "cover_image": "http://akira.edu.vn/wp-content/uploads/2017/09/giao-trinh-minna-no-nihongo-full.jpg",
+      "description": "Minna no nihongo I Honsatsu Bản tiếng Nhật\nみんなの日本語―初級I本冊"
+    },
+    {
+      "book_id": 10,
+      "title": "Minna no nihongo II",
+      "level": "N5 N4",
+      "price": 50000,
+      "cover_image": "http://akira.edu.vn/wp-content/uploads/2017/09/giao-trinh-minna-no-nihongo-full.jpg",
+      "description": "Minna no nihongo II Honsatsu Bản tiếng Nhật\nみんなの日本語―初級I本冊"
+    }
+  ]
+}

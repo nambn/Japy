@@ -19,9 +19,9 @@ class UsersController < ApplicationController
 		respond_to do |format|
 			if @user.save
 				log_in @user
-				format.json { render json: {"result" => "true","data" => @user.to_json}}
+				format.json { render json: {"result" => true,"data" => @user.to_json}}
 			else
-				format.json { render json: {"result" => "false", "data" => @user.errors}}
+				format.json { render json: {"result" => false, "data" => @user.errors}}
 			end
 		end
 	end
@@ -31,9 +31,9 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		respond_to do |format|
 			if @user.update_attributes(user_params)
-				format.json { render json: {"result" => "true","data" => @user.to_json}}
+				format.json { render json: {"result" => true,"data" => @user.to_json}}
 			else
-				format.json { render json: {"result" => "false", "data" => @user.errors}}
+				format.json { render json: {"result" => false, "data" => @user.errors}}
 			end
 		end
 	end
@@ -42,8 +42,13 @@ class UsersController < ApplicationController
 	def destroy
 		User.find(params[:id]).destroy
 		respond_to do |format|
-			format.json { render json: {"result" => "true"}}
+			format.json { render json: {"result" => true}}
 		end
+	end
+
+	# GET /u/last
+	def last
+		render json: User.last.id
 	end
 
 	private

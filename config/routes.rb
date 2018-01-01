@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 			get '/minitest(/:size)(/:type)(/:time)', to: 'books#minitest'
 		end
 
-		resources :users, only: [:index, :show] do
+		get '/u/last', to: 'users#last'
+		resources :users do
 			resources :scores, only: [:index, :create, :delete]
 			resources :books, only: [:index, :create]
 		end

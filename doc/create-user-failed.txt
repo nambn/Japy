@@ -1,0 +1,11 @@
+{
+  "result": false,
+  "data": {
+    "email": [
+      "is invalid"
+    ],
+    "password_confirmation": [
+      "doesn't match Password"
+    ]
+  }
+}
