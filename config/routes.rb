@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 		get	'/auth/google_oauth2' ,to: redirect('/auth/google_oauth2')
 	end
 
-	get '/auth/:provider/callback', to: 'users#google'
-	get '/auth/failure', to: redirect('/')
+	get '/auth/:provider/callback', to: 'users#google', defaults: {format: :json} 
+	get '/auth/failure', to: redirect('/'), defaults: {format: :json} 
 end
 

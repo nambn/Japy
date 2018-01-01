@@ -1,4 +1,16 @@
 {
   "result": true,
-  "data": "{\"id\":45,\"name\":\"bluesnail\",\"email\":\"bluey@snailey.com\",\"password_digest\":\"$2a$10$nfSiSUmAZuOZn5dQU.Jvi.8Bs3013oxymGpQX1YaHzygcU3UipBFS\",\"remember_digest\":null,\"admin\":false,\"created_at\":\"2018-01-01T09:42:12.943Z\",\"updated_at\":\"2018-01-01T09:42:12.943Z\"}"
+  "data": {
+    "id": 41,
+    "name": "bluesnail",
+    "email": "bluey@snailey.com",
+    "password_digest": "$2a$10$XJToFRnHbBxwPHwo1.rx1.uBZTr0Nvr5Bs/PXb7isP24wKzCspjqe",
+    "remember_digest": null,
+    "admin": false,
+    "img_url": null,
+    "oauth_token": null,
+    "oauth_expires_at": null,
+    "created_at": "2018-01-01T20:00:55.000Z",
+    "updated_at": "2018-01-01T20:00:55.000Z"
+  }
 }
