@@ -1,11 +1,14 @@
 class AllMigrationHere < ActiveRecord::Migration[5.1]
 	def change
 		create_table :users do |t|
-			t.string  :name, null: false
-			t.string  :email, null: false
-			t.string  :password_digest, null: false
-			t.string  :remember_digest
-			t.boolean :admin, default: false
+			t.string   :name, null: false
+			t.string   :email, null: false
+			t.string   :password_digest, null: false
+			t.string   :remember_digest
+			t.boolean  :admin, default: false
+			t.string	 :img_url
+			t.string   :oauth_token
+			t.datetime :oauth_expires_at
 			t.timestamps
 			t.index :email, unique: true
 		end

@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-	# before_action :logged_in_user, only: [:index, :show, :edit, :update]
-	# before_action :correct_user, only: [:edit, :update]
-	# before_action :admin_user, only: :destroy
 
 	# GET /users
 	def index
@@ -15,6 +12,11 @@ class UsersController < ApplicationController
 
 	# POST /users
 	def create
+		# if :provider
+		debugger
+		if params[:provider] 
+			render(json: params)
+		end
 		@user = User.new(user_params)
 		respond_to do |format|
 			if @user.save
@@ -55,16 +57,5 @@ class UsersController < ApplicationController
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation)
-	end
-
-	# Confirm the correct user
-	def correct_user
-		@user = User.find(params[:id])
-		redirect_to(current_user) unless current_user?(@user)
-	end
-
-	# Confirms an admin user.
-	def admin_user
-		redirect_to(root_url) unless current_user.admin?
 	end
 end

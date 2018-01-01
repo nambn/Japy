@@ -18,6 +18,8 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'activerecord-reset-pk-sequence'
+gem "omniauth-google-oauth2"
+gem 'omniauth-facebook'
 # gem 'bootstrap-will_paginate'
 # gem 'therubyracer', platforms: :ruby
 # gem 'capistrano-rails', group: :development

@@ -14,11 +14,13 @@ Rails.application.routes.draw do
 		get '/u/last', to: 'users#last'
 		resources :users do
 			resources :scores, only: [:index, :create, :delete]
-			resources :books, only: [:index, :create]
+			resources :books, only: [:index, :create]	
 		end
 
-		# get '/login', to: 'sessions#new'
-		# post '/login', to: 'sessions#create'
-		# delete '/logout', to: 'sessions#destroy'
+		get	'/auth/google_oauth2' ,to: redirect('/auth/google_oauth2')
 	end
+
+	get '/auth/:provider/callback', to: 'users#google'
+	get '/auth/failure', to: redirect('/')
 end
+
