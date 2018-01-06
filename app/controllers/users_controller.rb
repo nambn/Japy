@@ -3,43 +3,39 @@ class UsersController < ApplicationController
 	# GET /users
 	def index
 		@users = User.all
+		render json: {"result" => true, "data" => @users}
 	end
 
 	# GET /users/:id
 	def show
 		@user = User.find(params[:id])
+		render json: {"result" => true, "data" => @user}
 	end
 
 	# POST /users
 	def create
 		@user = User.new(user_params)
-		respond_to do |format|
-			if @user.save
-				format.json { render json: {"result" => true,"data" => @user}}
-			else
-				format.json { render json: {"result" => false, "data" => @user.errors}}
-			end
+		if @user.save
+			render json: {"result" => true,"data" => @user}
+		else
+			render json: {"result" => false, "data" => @user.errors}
 		end
 	end
 
 	# PATCH/PUT /users/:id
 	def update
 		@user = User.find(params[:id])
-		respond_to do |format|
-			if @user.update_attributes(user_params)
-				format.json { render json: {"result" => true,"data" => @user}}
-			else
-				format.json { render json: {"result" => false, "data" => @user.errors}}
-			end
+		if @user.update_attributes(user_params)
+			render json: {"result" => true,"data" => @user}
+		else
+			render json: {"result" => false, "data" => @user.errors}
 		end
 	end
 
 	# DELETE /users/:id
 	def destroy
 		User.find(params[:id]).destroy
-		respond_to do |format|
-			format.json { render json: {"result" => true}}
-		end
+		render json: {"result" => true}
 	end
 
 	# GET /u/last
@@ -52,13 +48,9 @@ class UsersController < ApplicationController
 		g = request.env['omniauth.auth'].to_hash
 		if ( user = User.find_by(email: g["info"]["email"]) )
 			if ( user.oauth_token == g["uid"] )
-				respond_to do |format|
-					format.json { render json: {"result" => true, "data" => user}}
-				end
+				render json: {"result" => true, "data" => user}
 			else
-				respond_to do |format|
-					format.json { render json: {"result" => false, "data" => {"errors" => "This email has been used"}}}
-				end
+				render json: {"result" => false, "data" => {"errors" => "This email has been used"}}
 			end
 		else
 			@user = User.new ({
@@ -68,14 +60,48 @@ class UsersController < ApplicationController
 				password_confirmation: g["uid"],
 				oauth_token: g["uid"],
 				img_url: g["info"]["image"] })
-			respond_to do |format|
-				if @user.save
-					format.json { render json: {"result" => true,"data" => @user}}
-				else
-					format.json { render json: {"result" => false, "data" => @user.errors}}
-				end
+			if @user.save
+				render json: {"result" => true,"data" => @user}
+			else
+				render json: {"result" => false, "data" => @user.errors}
 			end
 		end
+	end
+	
+	# GET /auth/facebook
+	def facebook
+		f = request.env['omniauth.auth'].to_hash
+		if ( user = User.find_by(email: f["info"]["email"]) )
+			if ( user.oauth_token == f["uid"] )
+				render json: {"result" => true, "data" => user}
+			else
+				render json: {"result" => false, "data" => {"errors" => "This email has been used"}}
+			end
+		end
+	else
+		@user = User.new ({
+			name: f["info"]["name"],
+			email: f["info"]["email"],
+			password: f["uid"],
+			password_confirmation: f["uid"],
+			oauth_token: f["uid"],
+			img_url: f["info"]["image"] })		
+		if @user.save
+			render json: {"result" => true,"data" => @user}
+		else
+			render json: {"result" => false, "data" => @user.errors}
+		end
+	end
+
+	# POST /login
+	def login
+		debugger
+		@user = User.find_by(name: params[:username])
+		if @user && @user.authenticate(params[:password])
+			render json: {"result" => true, "data" => @user}
+		else
+			render json: {"result" => false, "data" => 'Invalid email/password combination'}
+		end	
 	end
 
 	private

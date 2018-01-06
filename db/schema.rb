@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171227175900) do
   end
 
   create_table "vocabs", primary_key: "vocab_id", force: :cascade do |t|
-    t.integer "book_id", null: false
+    t.integer "book_id", default: 9, null: false
     t.integer "unit", null: false
     t.text "japanese", null: false
     t.text "kanji"
